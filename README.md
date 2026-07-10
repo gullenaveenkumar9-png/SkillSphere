@@ -1,20 +1,59 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# SkillSphere – Student Skill Exchange Platform
 
-# Run and deploy your AI Studio app
+SkillSphere is a modern full-stack web application that enables students to exchange skills instead of money. Students can teach what they know, learn new technologies from peers, collaborate on projects, and build their professional network.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/c55d4af8-49bc-48f1-ba63-1b4593566f78
+- AI-powered skill matching
+- Student profiles
+- Skill exchange requests
+- Real-time chat
+- Learning session scheduling
+- Progress tracking
+- Achievement badges
+- Leaderboard
+- Dashboard analytics
+- Responsive UI
+- Dark/Light mode
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
 
+### Backend
+- Node.js
+- Express.js
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Database
+- MongoDB
+
+## Installation
+
+```bash
+npm install
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+components/
+assets/
+server.ts
+package.json
+```
+
+## Author
+
+**Gulle Naveen Kumar**
+
+B.Tech Computer Science and Engineering
+
+## License
+
+This project is developed for educational and portfolio purposes.
