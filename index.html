@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillSphere</title>
+    <script>
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // This happens when libraries (such as formdata-polyfill used by node-fetch)
+      // try to assign a value to globalThis.fetch or window.fetch, which is read-only in some iframe/browser contexts.
+      (function() {
+        try {
+          var originalFetch = window.fetch || globalThis.fetch;
+          if (originalFetch) {
+            var storedFetch = originalFetch;
+
+            // Define getter/setter on Window.prototype
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() { return storedFetch; },
+                set: function(val) { storedFetch = val; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e) {
+              console.warn("Could not patch Window.prototype.fetch:", e);
+            }
+
+            // Define getter/setter on window
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function() { return storedFetch; },
+                set: function(val) { storedFetch = val; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e) {
+              console.warn("Could not patch window.fetch:", e);
+            }
+
+            // Define getter/setter on globalThis
+            try {
+              Object.defineProperty(globalThis, 'fetch', {
+                get: function() { return storedFetch; },
+                set: function(val) { storedFetch = val; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e) {
+              console.warn("Could not patch globalThis.fetch:", e);
+            }
+          }
+        } catch (err) {
+          console.error("Fetch patch failed entirely:", err);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
