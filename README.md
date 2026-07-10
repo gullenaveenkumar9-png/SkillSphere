@@ -1,20 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# SkillSphere
 
-# Run and deploy your AI Studio app
+SkillSphere is a full-stack Student Skill Exchange Platform that enables students to exchange knowledge instead of money.
 
-This contains everything you need to run your app locally.
+## Features
+- AI Skill Matching
+- Student Profiles
+- Real-time Chat
+- Learning Sessions
+- Gamification
+- Progress Tracking
+- Dashboard
+- Admin Panel
 
-View your app in AI Studio: https://ai.studio/apps/c55d4af8-49bc-48f1-ba63-1b4593566f78
+## Tech Stack
+- React
+- TypeScript
+- Node.js
+- Express.js
+- MongoDB
+- Tailwind CSS
 
-## Run Locally
+## Installation
 
-**Prerequisites:**  Node.js
+npm install
+npm run dev
 
+## Author
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Gulle Naveen Kumar
